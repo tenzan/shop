@@ -1,12 +1,12 @@
-<div class="page-hearder">
+<header>
   <h1>Categories</h1>
 
   <ul class="actions">
     <li>
-    <%= link_to fa_icon("plus") + " New Category", new_category_path, class: 'btn btn-success' %>
+    <%= link_to "New Category", new_category_path, class: 'new' %>
     </li>
   </ul>
-</div>
+</header>
 
 <div id="categories">
   <% @categories.each do |category| %>
