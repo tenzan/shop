@@ -1,0 +1,10 @@
+<div id="product">
+  <header>
+    <h1><%= @category.name %></h1>
+  </header>
+  <header>
+    <h2><%= @product.name %></h2>
+  </header>
+  <%= simple_format(@product.description) %>
+  <%= @product.price %>
+</div>
