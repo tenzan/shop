@@ -7,4 +7,5 @@
   </header>
   <%= simple_format(@product.description) %>
   <%= @product.price %>
+  <%= image_tag(@product.image_url.to_s) %>
 </div>

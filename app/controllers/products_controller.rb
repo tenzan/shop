@@ -7,7 +7,7 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = @category.products.build(products_params)
+    @product = @category.products.build(product_params)
 
     if @product.save
       flash[:notice] = 'Product has been created.'
@@ -19,13 +19,12 @@ class ProductsController < ApplicationController
   end
 
   def show
-
   end
 
   private
 
-  def products_params
-    params.require(:product).permit(:name, :description, :price)
+  def product_params
+    params.require(:product).permit(:name, :description, :price, :image)
   end
 
   def set_category
