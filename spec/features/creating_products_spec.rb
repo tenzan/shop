@@ -7,9 +7,12 @@ feature 'Users can create new products' do
   end
 
   scenario 'with valid attributes' do
+    path =  "#{Rails.root}/spec/fixtures/images/sample_image_01.png"
+
     fill_in 'Name', with: 'Sample title'
     fill_in 'Description', with: 'Some description'
     fill_in 'Price', with: 23.00
+    attach_file 'Image', path
     click_button 'Create Product'
 
     expect(page).to have_content 'Product has been created.'
@@ -21,5 +24,6 @@ feature 'Users can create new products' do
     expect(page).to have_content "Name can't be blank"
     expect(page).to have_content "Description can't be blank"
     expect(page).to have_content "Price can't be blank"
+    expect(page).to have_content "Image can't be blank"
   end
 end
