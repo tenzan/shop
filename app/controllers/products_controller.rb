@@ -34,6 +34,13 @@ class ProductsController < ApplicationController
     end
   end
 
+  def destroy
+    @product.destroy
+    flash[:notice] = 'Product has been deleted.'
+
+    redirect_to @category
+  end
+
   private
 
   def product_params
