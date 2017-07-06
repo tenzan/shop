@@ -1,5 +1,7 @@
 feature 'Users can create categories' do
   before do
+    login_as(FactoryGirl.create(:user, :admin))
+    
     visit '/'
 
     click_link 'New Category'

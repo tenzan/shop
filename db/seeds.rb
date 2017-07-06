@@ -5,3 +5,21 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+unless User.exists?(email: "admin@example.com")
+  User.create!(email: "admin@example.com", password: "password", admin: true)
+end
+
+unless User.exists?(email: "guest@example.com")
+  User.create!(email: "guest@example.com", password: "password")
+end
+
+["Books", "Magazines"].each do |name|
+  unless Category.exists?(name: name)
+    Category.create!(name: name)
+  end
+end
+
+["Sample book 1", "Sample book 2"] do |name|
+  unless
+end
