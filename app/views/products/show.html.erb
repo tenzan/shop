@@ -4,6 +4,11 @@
   </header>
   <header>
     <h2><%= @product.name %></h2>
+
+    <ul class="actions">
+      <li><%= link_to "Edit Product", [:edit, @category, @product], class: "edit" %></li>
+    </ul>
+
   </header>
   <%= simple_format(@product.description) %>
   <%= @product.price %>

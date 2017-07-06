@@ -30,13 +30,13 @@
     </thead>
 
   <tbody>
-    <% @category.products.each_with_index do |c, index| %>
+    <% @category.products.each_with_index do |product, index| %>
     <tr>
       <td> <%= index+1 %> </td>
-      <td> <%= link_to c.name, [@category, c] %> </td>
-      <td> <%= image_tag(c.image_url(:thumb).to_s) %> </td>
-      <td> <%= c.description %> </td>
-      <td> <%= c.price %> </td>
+      <td> <%= link_to product.name, [@category, product] %> </td>
+      <td> <%= image_tag(product.image_url(:thumb).to_s) %> </td>
+      <td> <%= product.description %> </td>
+      <td> <%= product.price %> </td>
     </tr>
     <% end %>
   </tbody>

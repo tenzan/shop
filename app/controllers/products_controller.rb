@@ -21,6 +21,19 @@ class ProductsController < ApplicationController
   def show
   end
 
+  def edit
+  end
+
+  def update
+    if @product.update(product_params)
+      flash[:notice] = 'Product has been updated.'
+      redirect_to [@category, @product]
+    else
+      flash[:alert] = 'Product has not been updated.'
+      render 'edit'
+    end
+  end
+
   private
 
   def product_params
