@@ -8,6 +8,7 @@ class ProductsController < ApplicationController
 
   def create
     @product = @category.products.build(product_params)
+    @product.author = current_user
 
     if @product.save
       flash[:notice] = 'Product has been created.'

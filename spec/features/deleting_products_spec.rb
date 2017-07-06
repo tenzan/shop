@@ -1,6 +1,7 @@
 feature 'Users can delete products' do
+  let(:author)  { FactoryGirl.create(:user) }
   let(:category) {FactoryGirl.create(:category)}
-  let(:product) {FactoryGirl.create(:product, category: category)}
+  let(:product) {FactoryGirl.create(:product, category: category, author: author)}
 
   before do
     visit category_product_path(category, product)

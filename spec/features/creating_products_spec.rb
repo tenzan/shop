@@ -1,5 +1,7 @@
 feature 'Users can create new products' do
+  let(:user) { FactoryGirl.create(:user) }
   before do
+    login_as(user)
     category = FactoryGirl.create(:category, name: 'Books')
 
     visit category_path(category)
@@ -16,6 +18,9 @@ feature 'Users can create new products' do
     click_button 'Create Product'
 
     expect(page).to have_content 'Product has been created.'
+    within("#product") do
+      expect(page).to have_content "Author: #{user.email}"
+    end
   end
   scenario 'with invalid attributes' do
     click_button 'Create Product'
