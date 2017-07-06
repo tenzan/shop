@@ -19,7 +19,3 @@ end
     Category.create!(name: name)
   end
 end
-
-["Sample book 1", "Sample book 2"] do |name|
-  unless
-end
