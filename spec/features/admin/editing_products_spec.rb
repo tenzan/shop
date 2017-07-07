@@ -4,6 +4,7 @@ feature 'Users can edit existing products' do
   let(:product) {FactoryGirl.create(:product, category: category, author: author)}
 
   before do
+    login_as(FactoryGirl.create(:user, :admin))
     visit category_product_path(category, product)
     click_link 'Edit Product'
   end

@@ -2,13 +2,15 @@ Rails.application.routes.draw do
   namespace :admin do
     root "application#index"
 
-    resources :categories, only: [:new, :create, :edit, :update, :destroy]
+    resources :categories, only: [:new, :create, :edit, :update, :destroy] do
+      resources :products, only: [:new, :create, :edit, :update, :destroy]
+    end
   end
 
   devise_for :users
   root 'categories#index'
 
   resources :categories, only: [:index, :show] do
-    resources :products
+    resources :products, only: [:index, :show]
   end
 end

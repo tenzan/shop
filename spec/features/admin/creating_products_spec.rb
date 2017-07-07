@@ -1,5 +1,5 @@
 feature 'Users can create new products' do
-  let(:user) { FactoryGirl.create(:user) }
+  let(:user) { FactoryGirl.create(:user, :admin) }
   before do
     login_as(user)
     category = FactoryGirl.create(:category, name: 'Books')
