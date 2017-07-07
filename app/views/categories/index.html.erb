@@ -1,9 +1,11 @@
 <header>
   <h1>Categories</h1>
 
+  <% admins_only do %>
   <ul class="actions">
     <%= link_to "New Category", new_admin_category_path, class: 'new' %>
   </ul>
+  <% end %>
 </header>
 
 <div id="categories">
