@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-  before_action :set_category, only: [:show, :edit, :update, :destroy]
+  before_action :set_category, only: [:show]
 
   def index
     @categories = Category.all
@@ -17,7 +17,4 @@ class CategoriesController < ApplicationController
     redirect_to categories_path
   end
 
-  def category_params
-    params.require(:category).permit(:name)
-  end
 end
