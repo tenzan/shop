@@ -1,4 +1,7 @@
 feature 'Users can delete cateories' do
+  before do
+    login_as(FactoryGirl.create(:user, :admin))
+  end
   scenario 'successfuly' do
     FactoryGirl.create(:category, name: 'Books')
 

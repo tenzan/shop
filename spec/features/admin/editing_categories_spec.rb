@@ -1,5 +1,6 @@
 feature 'Users can edit existing categories' do
   before do
+    login_as(FactoryGirl.create(:user, :admin))
     FactoryGirl.create(:category, name: 'Books')
 
     visit '/'
