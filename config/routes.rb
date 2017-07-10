@@ -7,7 +7,11 @@ Rails.application.routes.draw do
       resources :products, only: [:new, :create, :edit, :update, :destroy]
     end
 
-    resources :users
+    resources :users do
+      member do
+        patch :archive
+      end
+    end
   end
 
   devise_for :users
